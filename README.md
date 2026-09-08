@@ -12,6 +12,8 @@ Record/Replay proxy + Studio UI for OpenAI-compatible LLM APIs — deterministic
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](#requirements)
 [![License](https://img.shields.io/badge/license-MIT-blue)](#license)
 
+`llm` · `openai` · `testing` · `proxy` · `developer-tools`
+
 </div>
 
 ---
@@ -49,7 +51,7 @@ Named after the classic [VCR pattern](https://relishapp.com/vcr/vcr/docs) (recor
 ### Option A — Docker (recommended)
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/llm-vcr.git
+git clone https://github.com/ahaomar/llm-vcr.git
 cd llm-vcr
 docker compose up
 ```
@@ -66,7 +68,7 @@ stream      [200] x-vcr=replayed
 ### Option B — Plain Node.js
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/llm-vcr.git
+git clone https://github.com/ahaomar/llm-vcr.git
 cd llm-vcr
 VCR_MODE=replay node bin/vcr.js
 ```
@@ -365,7 +367,7 @@ llm-vcr/
 Issues and PRs welcome. The codebase is deliberately small (zero dependencies, no build step) — a good first contribution target.
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/llm-vcr.git
+git clone https://github.com/ahaomar/llm-vcr.git
 cd llm-vcr
 npm test        # everything must stay green
 ```
