@@ -1,0 +1,28 @@
+{
+  "name": "llm-vcr",
+  "version": "0.1.0",
+  "description": "Record/replay proxy for LLM APIs. Deterministic tests, zero API cost in CI, drift detection.",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "llm-vcr": "bin/vcr.js"
+  },
+  "scripts": {
+    "start": "node bin/vcr.js",
+    "test": "node test/run-tests.js",
+    "record:demo": "node scripts/record-demo-cassettes.js"
+  },
+  "keywords": [
+    "llm",
+    "vcr",
+    "proxy",
+    "testing",
+    "openai",
+    "record",
+    "replay",
+    "ci"
+  ]
+}

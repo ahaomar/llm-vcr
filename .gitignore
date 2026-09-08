@@ -1,0 +1,8 @@
+node_modules/
+test/.tmp/
+.vcr-drift-report.md
+*.log
+.DS_Store
+opencode.json
+cassettes-opencode/
+hello.html

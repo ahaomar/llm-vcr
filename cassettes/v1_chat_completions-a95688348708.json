@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "key": "a95688348708",
+  "recordedAt": "2026-09-08T10:29:08.102Z",
+  "streaming": true,
+  "request": {
+    "method": "POST",
+    "path": "/v1/chat/completions",
+    "body": {
+      "model": "gpt-4o-mini",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Count from 1 to 5."
+        }
+      ],
+      "stream": true
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "content-type": "text/event-stream"
+    },
+    "body": "data: {\"id\":\"chatcmpl-mock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1700000000,\"model\":\"gpt-4o-mini\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"Counting:\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-mock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1700000000,\"model\":\"gpt-4o-mini\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" one\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-mock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1700000000,\"model\":\"gpt-4o-mini\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" two\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-mock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1700000000,\"model\":\"gpt-4o-mini\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" three\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-mock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1700000000,\"model\":\"gpt-4o-mini\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" four\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-mock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1700000000,\"model\":\"gpt-4o-mini\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" five.\"},\"finish_reason\":\"stop\"}]}\n\ndata: [DONE]\n\n",
+    "chunks": [
+      "data: {\"id\":\"chatcmpl-mock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1700000000,\"model\":\"gpt-4o-mini\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"Counting:\"},\"finish_reason\":null}]}\n\n",
+      "data: {\"id\":\"chatcmpl-mock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1700000000,\"model\":\"gpt-4o-mini\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" one\"},\"finish_reason\":null}]}\n\n",
+      "data: {\"id\":\"chatcmpl-mock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1700000000,\"model\":\"gpt-4o-mini\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" two\"},\"finish_reason\":null}]}\n\n",
+      "data: {\"id\":\"chatcmpl-mock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1700000000,\"model\":\"gpt-4o-mini\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" three\"},\"finish_reason\":null}]}\n\n",
+      "data: {\"id\":\"chatcmpl-mock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1700000000,\"model\":\"gpt-4o-mini\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" four\"},\"finish_reason\":null}]}\n\n",
+      "data: {\"id\":\"chatcmpl-mock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1700000000,\"model\":\"gpt-4o-mini\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" five.\"},\"finish_reason\":\"stop\"}]}\n\n",
+      "data: [DONE]\n\n"
+    ]
+  },
+  "usage": {
+    "prompt_tokens": 5,
+    "completion_tokens": 9,
+    "total_tokens": 14,
+    "model": "gpt-4o-mini",
+    "approximated": true
+  }
+}

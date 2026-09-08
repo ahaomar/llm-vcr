@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>llm-vcr Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="logo">⏺</span>
+    <h1>llm-vcr <span class="thin">Studio</span></h1>
+  </div>
+  <div class="mode-switch" id="modeSwitch">
+    <button data-mode="record" id="btn-record">● Record</button>
+    <button data-mode="replay" id="btn-replay">▶ Replay</button>
+    <button data-mode="drift" id="btn-drift">∿ Drift</button>
+  </div>
+  <div class="status" id="upstreamStatus" title="Upstream"></div>
+</header>
+
+<main>
+  <section class="stats-row" id="statsRow">
+    <div class="stat"><span class="num" id="stat-replayed">0</span><span class="label">replayed</span></div>
+    <div class="stat"><span class="num" id="stat-recorded">0</span><span class="label">recorded</span></div>
+    <div class="stat"><span class="num" id="stat-missed">0</span><span class="label">missed</span></div>
+    <div class="stat"><span class="num" id="stat-driftmatch">0</span><span class="label">drift match</span></div>
+    <div class="stat"><span class="num" id="stat-driftdiff">0</span><span class="label">drift diff</span></div>
+    <div class="stat"><span class="num" id="stat-cassettes">0</span><span class="label">cassettes</span></div>
+  </section>
+
+  <div class="columns">
+    <section class="panel" id="livePanel">
+      <div class="panel-head">
+        <h2>Live traffic</h2>
+        <button class="small" id="clearLog">clear</button>
+      </div>
+      <ul id="liveLog" class="live-log"><li class="empty">Waiting for requests…</li></ul>
+    </section>
+
+    <section class="panel" id="cassettePanel">
+      <div class="panel-head">
+        <h2>Cassettes</h2>
+        <span class="pill" id="cassetteTotals"></span>
+      </div>
+      <ul id="cassetteList" class="cassette-list"></ul>
+    </section>
+
+    <section class="panel" id="connectPanel">
+      <div class="panel-head"><h2>Connect your agent</h2></div>
+      <form id="connectForm">
+        <label>Client
+          <select id="connect-client">
+            <option value="opencode">opencode</option>
+            <option value="cursor">Cursor</option>
+            <option value="curl">curl / script</option>
+          </select>
+        </label>
+        <label>Proxy base URL
+          <input type="text" id="connect-baseurl" value="" placeholder="http://localhost:9090">
+        </label>
+        <label>API key <small>(stored locally only, scrubbed in cassettes)</small>
+          <input type="password" id="connect-apikey" placeholder="optional in replay mode">
+        </label>
+        <label>Model
+          <input type="text" id="connect-model" placeholder="gpt-4o-mini">
+        </label>
+        <button type="submit">Write config file</button>
+        <div id="connectResult" class="result"></div>
+      </form>
+
+      <div class="panel-head" style="margin-top:1.2rem"><h2>Drift report</h2></div>
+      <div id="driftReport" class="drift-report"><span class="empty">Run drift mode to compare live vs recorded.</span></div>
+    </section>
+  </div>
+</main>
+
+<dialog id="cassetteDialog">
+  <div class="dialog-head">
+    <h3 id="dialogTitle">Cassette</h3>
+    <button class="small" onclick="document.getElementById('cassetteDialog').close()">✕</button>
+  </div>
+  <pre id="dialogBody"></pre>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

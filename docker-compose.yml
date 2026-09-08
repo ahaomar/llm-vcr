@@ -1,0 +1,24 @@
+# Quick demo: clone, run, replay. No API key needed.
+# The repo ships with pre-recorded cassettes.
+services:
+  vcr:
+    build: .
+    ports:
+      - "9090:9090"
+    environment:
+      VCR_MODE: replay
+      VCR_CASSETTES: /app/cassettes
+    volumes:
+      - ./cassettes:/app/cassettes
+
+  # The demo app talks to VCR, never to a real API.
+  demo:
+    image: node:20-alpine
+    working_dir: /demo
+    volumes:
+      - ./examples:/demo
+    environment:
+      DEMO_BASE_URL: http://vcr:9090
+    command: node demo.js
+    depends_on:
+      - vcr
