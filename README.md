@@ -14,6 +14,8 @@ Record/Replay proxy + Studio UI for OpenAI-compatible LLM APIs — deterministic
 
 `llm` · `openai` · `testing` · `proxy` · `developer-tools`
 
+![llm-vcr Studio demo](.github/assets/demo.gif)
+
 </div>
 
 ---
@@ -40,7 +42,7 @@ RECORD (you, once)           REPLAY (everyone, forever)          DRIFT (schedule
                                                        deterministic          drift report
 ```
 
-Named after the classic [VCR pattern](https://relishapp.com/vcr/vcr/docs) (record once, play back forever) — purpose-built for the LLM era with streaming, token tracking, and drift detection.
+Named after the classic [VCR pattern](https://github.com/vcr/vcr) (record once, play back forever) — purpose-built for the LLM era with streaming, token tracking, and drift detection.
 
 ---
 
