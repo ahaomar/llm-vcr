@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📼 llm-vcr
+# 📼 LLM-VCR
 
 **Record LLM API responses once. Replay them forever. Zero API cost for everyone who clones your repo.**
 
