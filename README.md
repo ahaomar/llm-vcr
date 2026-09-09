@@ -14,7 +14,7 @@ Record/Replay proxy + Studio UI for OpenAI-compatible LLM APIs — deterministic
 
 `llm` · `openai` · `testing` · `proxy` · `developer-tools`
 
-![llm-vcr Studio demo](.github/assets/demo.gif)
+![LLM-VCR Studio Demo](https://github.com/ahaomar/llm-vcr/blob/main/.github/assets/demo.gif)
 
 </div>
 
